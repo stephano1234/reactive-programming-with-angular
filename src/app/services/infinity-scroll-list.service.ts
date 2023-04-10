@@ -1,4 +1,4 @@
-import { Inject, Injectable, InjectionToken } from "@angular/core";
+import { Inject, Injectable, InjectionToken, Self } from "@angular/core";
 import { Observable, exhaustMap, scan, startWith, tap } from "rxjs";
 import { InfinityScrollableService } from "../interfaces/infinity-scrollable-service";
 import { WindowScrollService } from "./window-scroll.service";
@@ -14,7 +14,7 @@ export class InfinityScrollListService<T> {
   private readonly _list$: Observable<T[]>;
 
   constructor(
-    @Inject(INFINITY_SCROLLABLE_SERVICE) service: InfinityScrollableService<T>,
+    @Inject(INFINITY_SCROLLABLE_SERVICE) @Self() service: InfinityScrollableService<T>,
     scrollService: WindowScrollService,
   ) {
     this._list$ = scrollService.scrollBottom$.pipe(

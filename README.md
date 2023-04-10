@@ -15,7 +15,7 @@ A list loaded page by page as the scroll reaches the bottom of the window. This 
 ```
 docker run --name angular-native-reactive-approach --rm --network host -it -w /usr/src/app -v ${PWD}/:/usr/src/app node:18 bash
 ```
-### Angular commands:
+### Angular commands (inside the container):
 ```
 npm install
 ```
